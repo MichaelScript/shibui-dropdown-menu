@@ -24,9 +24,8 @@
 <!-- Check all that apply -->
 - [ ] Chrome
 - [ ] Firefox
+- [ ] Safari 11
+- [ ] Safari 10
 - [ ] Safari 9
-- [ ] Safari 8
-- [ ] Safari 7
 - [ ] Edge
 - [ ] IE 11
-- [ ] IE 10
