@@ -1,17 +1,20 @@
 {
-  "description": "Simple, modern, and inspired dropdown menu",
+  "description": "shibui-dropdown-menu for polymer 3",
   "keywords": [
     "web-components",
     "polymer",
+    "polymer 3",
     "dropdown",
+    "select",
+    "menu",
     "simple"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/ShibuiElements/shibui-dropdown-menu"
+    "url": "git://github.com/MichaelScript/shibui-dropdown-menu"
   },
-  "homepage": "https://github.com/ShibuiElements/shibui-dropdown-menu",
-  "name": "@polymer/shibui-dropdown-menu",
+  "homepage": "https://github.com/MichaelScript/shibui-dropdown-menu",
+  "name": "@polymer/shibui-dropdown",
   "version": "3.0.0",
   "resolutions": {
     "inherits": "2.0.3",
@@ -39,7 +42,9 @@
     "h",
     "o",
     "r",
-    "s"
+    "s",
+    "ShibUi Authors",
+    "MichaelScript"
   ],
   "license": "MIT",
   "dependencies": {

@@ -6,12 +6,6 @@
 
     <title>shibui-dropdown-menu demo</title>
 
-    <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-
-<<<<<<< HEAD
-    <script type="module" src="../../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
-    <script type="module" src="../../../@polymer/iron-demo-helpers/demo-snippet.js"></script>
-    <script type="module" src="../../../@polymer/iron-image/iron-image.js"></script>
     <script type="module" src="../shibui-dropdown-menu.js"></script>
 
     <!-- FIXME(polymer-modulizer):
@@ -42,29 +36,6 @@ $_documentContainer.innerHTML = `<style is="custom-style" include="demo-pages-sh
 
 document.head.appendChild($_documentContainer.content);
 </script>
-=======
-    <link rel="import" href="../shibui-dropdown-menu.html">
-    <link rel="import" href="../../iron-image/iron-image.html">
-
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
-        body {
-          display: block;
-          font-family: sans-serif;
-        }
-
-        shibui-dropdown-menu {
-          --shibui-dropdown-color: #79589F;
-          --shibui-dropdown-content: {
-            width: 200px;
-          };
-        }
-      </style>
-    </custom-style>
->>>>>>> 2ce55b71532b3e392f228a2b765526248532babd
   </head>
   <body>
     <script type="module">
@@ -73,14 +44,16 @@ const $_documentContainer = document.createElement('template');
 $_documentContainer.innerHTML = `<div class="vertical-section-container centered">
       <h3>Basic shibui-dropdown-menu demo</h3>
       <demo-snippet>
-        <template>
-          <shibui-dropdown-menu>
-            <button slot="trigger">Trigger</button>
-            <a>Account Settings</a>
-            <a>Notifications</a>
-            <a>Sign out</a>
-          </shibui-dropdown-menu>
-        </template>
+        <dom-bind>
+          <template is="dom-bind">
+            <shibui-dropdown-menu>
+              <button slot="trigger">Trigger</button>
+              <a>Account Settings</a>
+              <a>Notifications</a>
+              <a>Sign out</a>
+            </shibui-dropdown-menu>
+          </template>
+        </dom-bind>
       </demo-snippet>
     </div>`;
 
@@ -92,7 +65,8 @@ const $_documentContainer = document.createElement('template');
 $_documentContainer.innerHTML = `<div class="vertical-section-container centered">
       <h3>Basic shibui-dropdown-menu demo</h3>
       <demo-snippet>
-        <template>
+      <dom-bind>
+        <template is="dom-bind">
           <custom-style>
             <style is="custom-style" include="demo-pages-shared-styles">
               .primary {
@@ -131,6 +105,7 @@ $_documentContainer.innerHTML = `<div class="vertical-section-container centered
             <a>Sign out</a>
           </shibui-dropdown-menu>
         </template>
+        </dom-bind>
       </demo-snippet>
     </div>`;
 

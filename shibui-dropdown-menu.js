@@ -17,9 +17,10 @@ Example:
   from HTML and may be out of place here. Review them and
   then delete this comment!
 */
-import '../../@polymer/polymer/polymer-legacy.js';
-
-import '../../@polymer/iron-flex-layout/iron-flex-layout.js';
+import {Polymer} from '@polymer/polymer/polymer-legacy.js';
+import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
+import '@polymer/iron-flex-layout/iron-flex-layout.js';
+import {dom} from '@polymer/polymer/lib/legacy/polymer.dom.js';
 import './shibui-dropdown.js';
 const $_documentContainer = document.createElement('template');
 $_documentContainer.setAttribute('style', 'display: none;');
@@ -42,9 +43,10 @@ $_documentContainer.innerHTML = `<dom-module id="shibui-dropdown-menu">
     <shibui-dropdown id="dropdown" opened="{{opened}}" alignment="[[alignment]]">
       <slot></slot>
     </shibui-dropdown>
+    <h1> Test!!</h1>
   </template>
 
-  
+
 </dom-module>`;
 
 document.head.appendChild($_documentContainer.content);
@@ -73,6 +75,7 @@ Polymer({
   },
 
   attached: function() {
+    console.log("attached");
     this._toggle = this._toggle.bind(this);
     this._triggerElement.addEventListener('click', this._toggle);
   },
@@ -85,7 +88,7 @@ Polymer({
    * The trigger element provided
    */
   get _triggerElement() {
-    return Polymer.dom(this.$.trigger).getDistributedNodes()[0];
+    return dom(this.$.trigger).getDistributedNodes()[0];
   },
 
   _toggle: function() {

@@ -20,8 +20,6 @@
         </shibui-dropdown>
       </template>
     </test-fixture>
-
-<<<<<<< HEAD
     <script type="module">
 import '../shibui-dropdown.js';
 suite('shibui-dropdown', function() {
@@ -29,22 +27,6 @@ suite('shibui-dropdown', function() {
   setup(function() {
     element = fixture('basic');
   });
-=======
-    <script>
-      suite('shibui-dropdown', function() {
-        var element;
-        setup(function(done) {
-          element = fixture('basic');
-          Polymer.RenderStatus.afterNextRender(element, done);
-        });
-
-        test('the dropdown dynamically positions itself', function() {
-          element.set('opened', true);
-          expect(element.style.maxWidth).to.equal('calc(100% - 20px)');
-          expect(element.style.left).to.match(/^\d+px$/);
-          expect(element.style.top).to.match(/^\d+px$/);
-        });
->>>>>>> 2ce55b71532b3e392f228a2b765526248532babd
 
   test('the dropdown closes when an item is clicked', function(done) {
     element.set('opened', true);
