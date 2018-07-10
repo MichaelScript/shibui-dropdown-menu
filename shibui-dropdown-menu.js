@@ -43,7 +43,6 @@ $_documentContainer.innerHTML = `<dom-module id="shibui-dropdown-menu">
     <shibui-dropdown id="dropdown" opened="{{opened}}" alignment="[[alignment]]">
       <slot></slot>
     </shibui-dropdown>
-    <h1> Test!!</h1>
   </template>
 
 
