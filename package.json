@@ -7,14 +7,15 @@
     "dropdown",
     "select",
     "menu",
-    "simple"
+    "simple",
+    "shibui"
   ],
   "repository": {
     "type": "git",
     "url": "git://github.com/MichaelScript/shibui-dropdown-menu"
   },
   "homepage": "https://github.com/MichaelScript/shibui-dropdown-menu",
-  "name": "@polymer/shibui-dropdown",
+  "name": "shibui-dropdown-menu",
   "version": "3.0.0",
   "resolutions": {
     "inherits": "2.0.3",

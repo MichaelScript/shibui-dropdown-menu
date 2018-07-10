@@ -6,6 +6,11 @@
 
 Simple, modern, and inspired dropdown menu.
 
+Updated to work with Polymer 3.
+
+`npm install --save shibui-dropdown-menu`
+`yarn add shibui-dropdown-menu`
+
 <!---
 ```
 <custom-element-demo height="160">
