@@ -1,0 +1,56 @@
+{
+  "description": "Simple, modern, and inspired dropdown menu",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "dropdown",
+    "simple"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ShibuiElements/shibui-dropdown-menu"
+  },
+  "homepage": "https://github.com/ShibuiElements/shibui-dropdown-menu",
+  "name": "@polymer/shibui-dropdown-menu",
+  "version": "3.0.0",
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0",
+    "@webcomponents/webcomponentsjs": "2.0.0-beta.2"
+  },
+  "main": "shibui-dropdown-menu.js",
+  "contributors": [
+    "T",
+    "h",
+    "e",
+    " ",
+    "S",
+    "h",
+    "i",
+    "b",
+    "u",
+    "i",
+    " ",
+    "A",
+    "u",
+    "t",
+    "h",
+    "o",
+    "r",
+    "s"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.18"
+  },
+  "devDependencies": {
+    "@polymer/iron-component-page": "^3.0.0-pre.18",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.18",
+    "wct-browser-legacy": "^0.0.1-pre.11",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/iron-image": "^3.0.0-pre.18"
+  }
+}

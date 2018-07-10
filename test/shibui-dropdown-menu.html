@@ -6,10 +6,10 @@
 
     <title>shibui-dropdown-menu test</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../../wct-browser-legacy/browser.js"></script>
 
-    <link rel="import" href="../shibui-dropdown-menu.html">
+    <script type="module" src="../shibui-dropdown-menu.js"></script>
   </head>
   <body>
     <test-fixture id="basic">
@@ -21,26 +21,27 @@
       </template>
     </test-fixture>
 
-    <script>
-      suite('shibui-dropdown-menu', function() {
-        var element;
-        setup(function() {
-          element = fixture('basic');
-        });
+    <script type="module">
+import '../shibui-dropdown-menu.js';
+suite('shibui-dropdown-menu', function() {
+  var element;
+  setup(function() {
+    element = fixture('basic');
+  });
 
-        test('the dropdown opens when the trigger is clicked', function() {
-          expect(element.opened).to.equal(false);
-          element._triggerElement.click();
-          expect(element.opened).to.equal(true);
-        });
+  test('the dropdown opens when the trigger is clicked', function() {
+    expect(element.opened).to.equal(false);
+    element._triggerElement.click();
+    expect(element.opened).to.equal(true);
+  });
 
-        test('the dropdown closes when the trigger is clicked', function() {
-          element.set('opened', true);
-          expect(element.opened).to.equal(true);
-          element._triggerElement.click();
-          expect(element.opened).to.equal(false);
-        });
-      });
-    </script>
+  test('the dropdown closes when the trigger is clicked', function() {
+    element.set('opened', true);
+    expect(element.opened).to.equal(true);
+    element._triggerElement.click();
+    expect(element.opened).to.equal(false);
+  });
+});
+</script>
   </body>
 </html>

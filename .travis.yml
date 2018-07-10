@@ -10,9 +10,9 @@ addons:
     packages:
       - google-chrome-stable
 before_script:
-  - npm install -g bower polylint web-component-tester
-  - bower install
+  - npm install -g polylint web-component-tester
   - polylint
 script:
-  - xvfb-run wct
-  - 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then wct -s ''default''; fi'
+  - xvfb-run wct --module-resolution=node --npm
+  - 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then wct --module-resolution=node --npm -s ''default''; fi'
+

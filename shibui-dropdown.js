@@ -1,8 +1,4 @@
-<link rel="import" href="../polymer/polymer.html">
-
-<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
-
-<!--
+/**
 `shibui-dropdown` is a simple and modern dropdown inspired by the dropdown on [Heroku](https://heroku.com).
 
 Example:
@@ -23,10 +19,20 @@ Custom property | Description | Default
 `--shibui-dropdown-content` | A mixin that is applied to the dropdown | `{}`
 
 @demo demo/shibui-dropdown.html
--->
+*/
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '../../@polymer/polymer/polymer-legacy.js';
 
-<dom-module id="shibui-dropdown">
-  <template strip-whitespace>
+import '../../@polymer/iron-flex-layout/iron-flex-layout.js';
+const $_documentContainer = document.createElement('template');
+$_documentContainer.setAttribute('style', 'display: none;');
+
+$_documentContainer.innerHTML = `<dom-module id="shibui-dropdown">
+  <template strip-whitespace="">
     <style>
       :host {
         background: var(--shibui-dropdown-background, white);
@@ -85,72 +91,73 @@ Custom property | Description | Default
     <slot id="content"></slot>
   </template>
 
-  <script>
-    Polymer({
-      is: 'shibui-dropdown',
+  
+</dom-module>`;
 
-      properties: {
-        /**
-         * Determines whether the dropdown is opened or closed
-         */
-        opened: {
-          type: Boolean,
-          value: false,
-          notify: true,
-          reflectToAttribute: true,
-          observer: '_openedChanged'
-        },
+document.head.appendChild($_documentContainer.content);
+Polymer({
+  is: 'shibui-dropdown',
 
-        /**
-         * Whether to align the dropdown to the 'right' or 'left' of its relative parent
-         */
-        alignment: {
-          type: String,
-          value: 'right',
-          reflectToAttribute: true
-        }
-      },
+  properties: {
+    /**
+     * Determines whether the dropdown is opened or closed
+     */
+    opened: {
+      type: Boolean,
+      value: false,
+      notify: true,
+      reflectToAttribute: true,
+      observer: '_openedChanged'
+    },
 
-      attached: function() {
-        this.toggle = this.toggle.bind(this);
-        this.open = this.open.bind(this);
-        this.close = this.close.bind(this);
-      },
+    /**
+     * Whether to align the dropdown to the 'right' or 'left' of its relative parent
+     */
+    alignment: {
+      type: String,
+      value: 'right',
+      reflectToAttribute: true
+    }
+  },
 
-      detached: function() {
-        document.removeEventListener('click', this.close);
-      },
+  attached: function() {
+    this.toggle = this.toggle.bind(this);
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+  },
 
-      /**
-       * Toggles the opened state of the dropdown
-       */
-      toggle: function() {
-        this.set('opened', !this.opened);
-      },
+  detached: function() {
+    document.removeEventListener('click', this.close);
+  },
 
-      /**
-       * Opens the dropdown
-       */
-      open: function() {
-        this.set('opened', true);
-      },
+  /**
+   * Toggles the opened state of the dropdown
+   */
+  toggle: function() {
+    this.set('opened', !this.opened);
+  },
 
-      /**
-       * Closes the dropdown
-       */
-      close: function() {
-        this.set('opened', false);
-      },
+  /**
+   * Opens the dropdown
+   */
+  open: function() {
+    this.set('opened', true);
+  },
 
-      _openedChanged: function(opened) {
-        if (opened) {
-          Polymer.RenderStatus.afterNextRender(this, function() {
-            document.addEventListener('click', this.close);
-          });
-        } else {
-          document.removeEventListener('click', this.close);
-        }
-      }
-    });
-  </script>
-</dom-module>
+  /**
+   * Closes the dropdown
+   */
+  close: function() {
+    this.set('opened', false);
+  },
+
+  _openedChanged: function(opened) {
+    if (opened) {
+      Polymer.RenderStatus.afterNextRender(this, function() {
+        document.addEventListener('click', this.close);
+      });
+    } else {
+      document.removeEventListener('click', this.close);
+    }
+  }
+});

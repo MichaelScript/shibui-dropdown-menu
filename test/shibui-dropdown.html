@@ -6,10 +6,10 @@
 
     <title>shibui-dropdown test</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../../wct-browser-legacy/browser.js"></script>
 
-    <link rel="import" href="../shibui-dropdown.html">
+    <script type="module" src="../shibui-dropdown.js"></script>
   </head>
   <body>
     <test-fixture id="basic">
@@ -21,32 +21,33 @@
       </template>
     </test-fixture>
 
-    <script>
-      suite('shibui-dropdown', function() {
-        var element;
-        setup(function() {
-          element = fixture('basic');
-        });
+    <script type="module">
+import '../shibui-dropdown.js';
+suite('shibui-dropdown', function() {
+  var element;
+  setup(function() {
+    element = fixture('basic');
+  });
 
-        test('the dropdown closes when an item is clicked', function(done) {
-          element.set('opened', true);
-          Polymer.RenderStatus.afterNextRender(element, function() {
-            element.querySelector('a:first-child').click();
-            expect(element.opened).to.equal(false);
-            done();
-          });
-        });
+  test('the dropdown closes when an item is clicked', function(done) {
+    element.set('opened', true);
+    Polymer.RenderStatus.afterNextRender(element, function() {
+      element.querySelector('a:first-child').click();
+      expect(element.opened).to.equal(false);
+      done();
+    });
+  });
 
-        test('the dropdown closes when the background is clicked', function(done) {
-          element.set('opened', true);
-          expect(element.opened).to.equal(true);
-          Polymer.RenderStatus.afterNextRender(element, function() {
-            document.body.click();
-            expect(element.opened).to.equal(false);
-            done();
-          });
-        });
-      });
-    </script>
+  test('the dropdown closes when the background is clicked', function(done) {
+    element.set('opened', true);
+    expect(element.opened).to.equal(true);
+    Polymer.RenderStatus.afterNextRender(element, function() {
+      document.body.click();
+      expect(element.opened).to.equal(false);
+      done();
+    });
+  });
+});
+</script>
   </body>
 </html>
